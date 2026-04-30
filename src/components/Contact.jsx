@@ -12,7 +12,7 @@ export default function Contact() {
       return;
     }
     try {
-      await axios.post('/api/contact', form);
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/contact`, form);
       setStatus('Message sent! I will get back to you soon.');
       setForm({ name: '', email: '', message: '' });
     } catch {
